@@ -7,4 +7,5 @@ For[ Python](https://www.python.org/downloads/)
 For [Javascript](https://nodejs.org/en/download/)
 
 `npm install puppeteer`
+
 `node script.js`
