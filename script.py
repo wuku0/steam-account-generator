@@ -1,10 +1,16 @@
+# Not working, edit as you like.
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
+import time
 
 # Open a web browser
 driver = webdriver.Firefox()#replace with Chrome alternatively
 
+# disclaimer
+print("By using this script, you agree to the STEAM® SUBSCRIBER AGREEMENT, which can be found at: https://store.steampowered.com/subscriber_agreement/")
+time.sleep(3)
 
 driver.execute_script("window.open('');")
 driver.switch_to.window(driver.window_handles[1])
@@ -35,6 +41,20 @@ email_field = driver.find_element_by_id('email')
 email_field.send_keys(email)
 password_field = driver.find_element_by_id('password')
 password_field.send_keys(password)
+driver.get("https://store.steampowered.com/join")
+e = driver.find_element_by_id("email")
+e.send_keys(Keys.CONTROL, 'v')
+ee = driver.find_element_by_id("reenter_email")
+ee.send_keys(Keys.CONTROL, 'v')
+i = driver.find_element_by_id("captchaImg")
+print(i.get_attribute('src'))
+ii = raw_input("Solve The Capcha: ")
+iit = driver.find_element_by_id("captcha_text")
+iit.send_keys(ii)
+agree = driver.find_element_by_id('i_agree_check')
+agree.click()
+con = driver.find_element_by_id('createAccountButton')
+con.click()
 
 # Submit the form
 submit_button = driver.find_element_by_css_selector('button[type="submit"]')
