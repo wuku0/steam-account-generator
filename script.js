@@ -38,7 +38,7 @@ const puppeteer = require('puppeteer');
   await page.type('#username', username);
   await page.type('#email', email);
   await page.type('#password', password);
-
+  // add capcha using wit.ai 
 
   await page.click('button[type="submit"]');
  // Print the email, username, and password
