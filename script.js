@@ -1,3 +1,6 @@
+// Will try using Wit.ai to automate capcha in the future
+
+
 const puppeteer = require('puppeteer');
 
 (async () => {
